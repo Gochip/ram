@@ -1,0 +1,9 @@
+CAR 5
+ALM R(1)
+CAR 6
+ALM R(2)
+CAR 7
+ALM R(3)
+SUM R(2)
+SUM R(1)
+EOF
