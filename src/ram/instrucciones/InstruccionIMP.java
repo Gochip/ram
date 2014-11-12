@@ -6,43 +6,43 @@ import ram.Registros;
 /**
  * @author Parisi Germán
  */
-public class InstruccionLEE extends Instruccion {
+public class InstruccionIMP extends Instruccion {
 
     private long n;
     private int direccionamiento;
 
-    public InstruccionLEE(long n, int direccionamiento) {
+    public InstruccionIMP(long n, int direccionamiento) {
         this.n = n;
         this.direccionamiento = direccionamiento;
     }
 
     @Override
     public void ejecutar(StringBuilder entrada, StringBuilder salida, Registro cl, Registro ce, Registro cp, Registro acum, Registros registros) {
-        char c = '\000';
-        if (cl.getValor() >= entrada.length()) {
-            System.err.println("ERROR, se acabó la entrada");
-        } else {
-            c = entrada.charAt((int) cl.getValor());
-        }
         switch (direccionamiento) {
             case Instruccion.INDIRECTO:
                 long v = registros.getRegistro(n).getValor();
-                registros.setRegistro(v, c);
+                salida.append((char)registros.getRegistro(v).getValor());
+                break;
+            case Instruccion.DIRECTO:
+                long va = registros.getRegistro(n).getValor();
+                salida.append((char)va);
                 break;
             default:
-                registros.setRegistro(n, c);
+                salida.append((char)n);
         }
         cp.setValor(cp.getValor() + 1);
-        cl.setValor(cl.getValor() + 1);
+        ce.setValor(ce.getValor() + 1);
     }
 
     @Override
     public String mostrar() {
         switch (direccionamiento) {
             case Instruccion.INDIRECTO:
-                return "LEE R(R(" + n + "))";
+                return "IMP R(R(" + n + "))";
+            case Instruccion.DIRECTO:
+                return "IMP R(" + n + ")";
             default:
-                return "LEE R(" + n + ")";
+                return "IMP " + n;
         }
     }
 }

@@ -44,10 +44,13 @@ public class RAM {
         cp.setValor(1);
         cl = new Registro(-2);
         ce = new Registro(-3);
+        salida = new StringBuilder();
     }
 
     public void ejecutarPrograma(List<Instruccion> instrucciones, boolean mostrar) {
-        System.out.println("Ejecutando programa");
+        if(mostrar){
+            System.out.println("Ejecutando programa");
+        }
         for (; cp.getValor() <= instrucciones.size();) {
             Instruccion instruccion = instrucciones.get((int) (cp.getValor() - 1));
             if (mostrar) {
@@ -55,7 +58,9 @@ public class RAM {
             }
             instruccion.ejecutar(entrada, salida, cl, ce, cp, acumulador, registros);
         }
-        System.out.println("Fin programa");
+        if(mostrar){
+            System.out.println("Fin programa");
+        }
     }
 
     public void setEntrada(StringBuilder entrada) {
@@ -66,11 +71,11 @@ public class RAM {
         return this.salida;
     }
 
-    public long getCl() {
+    public long getCL() {
         return cl.getValor();
     }
 
-    public long getCe() {
+    public long getCE() {
         return ce.getValor();
     }
 
@@ -78,7 +83,7 @@ public class RAM {
         return acumulador.getValor();
     }
 
-    public long getCp() {
+    public long getCP() {
         return cp.getValor();
     }
 

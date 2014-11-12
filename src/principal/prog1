@@ -2,4 +2,4 @@ LEE R(1)
 LEE R(2)
 CAR R(1)
 SUM R(2)
-EOF
+FIN

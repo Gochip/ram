@@ -21,32 +21,24 @@ public class Main {
     private static StringBuilder entrada;
 
     public static void main(String[] args) {
-        RAM ram = new RAM();
+        Controlador controlador = Controlador.getInstancia();
+        controlador.iniciar();
 
-        Scanner sc = new Scanner(System.in);
-        StringBuilder sb = new StringBuilder();
-        while (sc.hasNextLine()) {
-            String linea = sc.nextLine();
-            if (linea.equals("EOF")) {
-                break;
-            }
-            sb.append(linea + "\n");
-
-        }
-        entrada = new StringBuilder("AB");
+//        Scanner sc = new Scanner(System.in);
+//        StringBuilder sb = new StringBuilder();
+//        while (sc.hasNextLine()) {
+//            String linea = sc.nextLine();
+//            if (linea.equals("FIN")) {
+//                break;
+//            }
+//            sb.append(linea + "\n");
+//
+//        }
+////        entrada = new StringBuilder("AB");
         //List<Instruccion> instrucciones = crearPrograma4();
-        String programa = sb.toString();
+//        String programa = sb.toString();
 
-        List<Instruccion> instrucciones = CreacionPrograma.crearPrograma(programa);
-        ram.setEntrada(entrada);
-        ram.ejecutarPrograma(instrucciones, true);
-        System.out.println("-------------");
-        System.out.println("CP: " + ram.getCp());
-        System.out.println("Acumulador: " + ram.getAcumulador());
-        System.out.println("Registros");
-        for (Registro r : ram.getRegistros()) {
-            System.out.println(r);
-        }
+        
     }
 
     public static ArrayList<Instruccion> crearPrograma() {
