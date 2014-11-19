@@ -1,0 +1,14 @@
+CAR 0
+ALM R(2)
+CAR 5
+SxI 13
+ALM R(1)
+ALM R(3)
+CAR R(2)
+SUM R(3)
+ALM R(2)
+CAR R(1)
+RES 1
+SAL 4
+IMP R(2)
+FIN

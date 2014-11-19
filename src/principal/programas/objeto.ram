@@ -1,0 +1,17 @@
+CAR 100
+ALM R(1)
+ALM R(2)
+LEE R(R(1))
+CAR R(1)
+SUM 1
+ALM R(1)
+LEE R(R(1))
+CAR R(R(1))
+MUL R(R(2))
+ALM R(3)
+CAR R(2)
+SUM 2
+ALM R(1)
+CAR R(3)
+ALM R(R(1))
+FIN

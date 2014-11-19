@@ -24,13 +24,19 @@ public class InstruccionLEE extends Instruccion {
         } else {
             c = entrada.charAt((int) cl.getValor());
         }
+        int cf = c;
+        try {
+            cf = Integer.parseInt(c + "");
+        } catch (NumberFormatException e) {
+            cf = (int) c;
+        }
         switch (direccionamiento) {
             case Instruccion.INDIRECTO:
                 long v = registros.getRegistro(n).getValor();
-                registros.setRegistro(v, c);
+                registros.setRegistro(v, cf);
                 break;
             default:
-                registros.setRegistro(n, c);
+                registros.setRegistro(n, cf);
         }
         cp.setValor(cp.getValor() + 1);
         cl.setValor(cl.getValor() + 1);

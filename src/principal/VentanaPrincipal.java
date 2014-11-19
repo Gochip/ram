@@ -6,9 +6,16 @@ package principal;
 
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BoxLayout;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import ram.Registro;
 
 /**
@@ -45,6 +52,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnEjecutar = new javax.swing.JButton();
         pnlRegistros = new javax.swing.JPanel();
         btnVolver = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,6 +69,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jLabel4.setText("Salida");
 
+        txtSalida.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         txtSalida.setEnabled(false);
 
         btnEjecutar.setText("Ejecutar");
@@ -89,6 +98,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Examinar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -106,7 +122,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                                 .addComponent(jLabel4)
                                 .addComponent(jLabel2)
                                 .addComponent(txtEntrada)
-                                .addComponent(jLabel3)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton1))
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
                                 .addComponent(txtSalida)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -129,7 +148,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -141,7 +162,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEjecutar)
                     .addComponent(btnVolver))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -161,6 +182,24 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pnlRegistros.removeAll();
         pnlRegistros.repaint();
     }//GEN-LAST:event_btnVolverActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JFileChooser selector = new JFileChooser("src/principal/programas");
+        selector.showOpenDialog(this);
+        File file = selector.getSelectedFile();
+        if(file != null){
+            try {
+                Scanner sc = new Scanner(file);
+                StringBuilder contenido = new StringBuilder();
+                while(sc.hasNextLine()){
+                    contenido.append(sc.nextLine()).append("\n");
+                }
+                txaPrograma.setText(contenido.toString());
+            } catch (FileNotFoundException ex) {
+                JOptionPane.showMessageDialog(this, "Problema con el archivo");
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public void setSalida(String salida) {
         txtSalida.setText(salida);
@@ -198,6 +237,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEjecutar;
     private javax.swing.JButton btnVolver;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

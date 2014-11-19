@@ -1,10 +1,6 @@
 package principal;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import ram.RAM;
-import ram.Registro;
 import ram.instrucciones.Instruccion;
 import ram.instrucciones.InstruccionALM;
 import ram.instrucciones.InstruccionCAR;

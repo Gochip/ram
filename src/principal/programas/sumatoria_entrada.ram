@@ -1,0 +1,9 @@
+LEE R(1)
+CAR R(1)
+SxI 8
+CAR R(2)
+SUM R(1)
+ALM R(2)
+SAL 1
+IMP R(2)
+FIN

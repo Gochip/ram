@@ -21,17 +21,18 @@ public class InstruccionIMP extends Instruccion {
         switch (direccionamiento) {
             case Instruccion.INDIRECTO:
                 long v = registros.getRegistro(n).getValor();
-                salida.append((char)registros.getRegistro(v).getValor());
+                salida.append(registros.getRegistro(v).getValor());
                 break;
             case Instruccion.DIRECTO:
                 long va = registros.getRegistro(n).getValor();
-                salida.append((char)va);
+                salida.append(va);
                 break;
             default:
-                salida.append((char)n);
+                salida.append(n);
         }
         cp.setValor(cp.getValor() + 1);
         ce.setValor(ce.getValor() + 1);
+        salida.append("|");
     }
 
     @Override
