@@ -184,7 +184,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JFileChooser selector = new JFileChooser("src/principal/programas");
+        JFileChooser selector = new JFileChooser("programas");
         selector.showOpenDialog(this);
         File file = selector.getSelectedFile();
         if(file != null){
