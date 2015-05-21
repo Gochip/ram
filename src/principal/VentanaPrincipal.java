@@ -57,7 +57,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Máquina de Acceso Aleatorio");
+        jLabel1.setText("Máquina de Acceso Aleatorio (v1.0)");
 
         jLabel2.setText("Entrada");
 
