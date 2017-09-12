@@ -48,7 +48,7 @@
                                         </tbody></table>" value='CAR'>
                                     CAR
                                 </button>
-                                <button type="button" class="btn btn-success btn-sm instruccion"
+                                <button type="button" class="btn btn-danger btn-sm instruccion"
                                         data-toggle="tooltip" data-placement="top" data-html="true"
                                         title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
                                         <tbody><tr><td>DIV n</td><td>[R0] <- Entero([R0] / Valor(n))</td><td>[CP] <- [CP] + 1</td></tr>
@@ -57,24 +57,7 @@
                                         </tbody></table>" value='DIV'>
                                     DIV
                                 </button>
-                                <button type="button" class="btn btn-success btn-sm instruccion"
-                                        data-toggle="tooltip" data-placement="top" data-html="true"
-                                        title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
-                                        <tbody><tr><td>IMP n</td><td>CeldaDeSalida[CE] <- Valor(n)</td><td>[CP] <- [CP] + 1</td></tr>
-                                        <tr><td>IMP R(i)</td><td>CeldaDeSalida[CE] <- [Ri]</td><td>[CP] <- [CP] + 1</td></tr>
-                                        <tr><td>IMP R(R(i))</td><td>CeldaDeSalida[CE] <-[R[Ri]]</td><td>[CP] <- [CP] + 1</td></tr>
-                                        </tbody></table>" value='IMP'>
-                                    IMP
-                                </button>
-                                <button type="button" class="btn btn-success btn-sm instruccion"
-                                        data-toggle="tooltip" data-placement="top" data-html="true"
-                                        title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
-                                        <tbody><tr><td>LEE R(i)</td><td>[Ri] <- CeldaDeEntrada(CL)</td><td>[CP] <- [CP] + 1</td></tr>
-                                        <tr><td>LEE R(R(i))</td><td>[R[Ri]] <- CeldaDeEntrada(CL)</td><td>[CP] <- [CP] + 1</td></tr>
-                                        </tbody></table>" value='LEE'>
-                                    LEE
-                                </button>
-                                <button type="button" class="btn btn-success btn-sm instruccion"
+                                <button type="button" class="btn btn-danger btn-sm instruccion"
                                         data-toggle="tooltip" data-placement="top" data-html="true"
                                         title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
                                         <tbody><tr><td>MUL n</td><td>[R0] <- [R0] * Valor(n)</td><td>[CP] <- [CP] + 1</td></tr>
@@ -83,7 +66,7 @@
                                         </tbody></table>" value='MUL'>
                                     MUL
                                 </button>
-                                <button type="button" class="btn btn-success btn-sm instruccion"
+                                <button type="button" class="btn btn-danger btn-sm instruccion"
                                         data-toggle="tooltip" data-placement="top" data-html="true"
                                         title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
                                         <tbody><tr><td>RES n</td><td>[R0] <- max(0, [R0] – Valor(n))</td><td>[CP] <- [CP] + 1</td></tr>
@@ -92,14 +75,7 @@
                                         </tbody></table>" value='RES'>
                                     RES
                                 </button>
-                                <button type="button" class="btn btn-success btn-sm instruccion"
-                                        data-toggle="tooltip" data-placement="top" data-html="true"
-                                        title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
-                                        <tbody><tr><td>SAL m</td><td></td><td>[CP] <- Valor(m)</td></tr>
-                                        </tbody></table>" value='SAL'>
-                                    SAL
-                                </button>
-                                <button type="button" class="btn btn-success btn-sm instruccion"
+                                <button type="button" class="btn btn-danger btn-sm instruccion"
                                         data-toggle="tooltip" data-placement="top" data-html="true"
                                         title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
                                         <tbody><tr><td>SUM n</td><td>[R0] <- [R0] + Valor(n)</td><td>[CP] <- [CP] + 1</td></tr>
@@ -108,19 +84,43 @@
                                         </tbody></table>" value='SUM'>
                                     SUM
                                 </button>
-                                <button type="button" class="btn btn-success btn-sm instruccion"
+                                <button type="button" class="btn btn-warning btn-sm instruccion"
+                                        data-toggle="tooltip" data-placement="top" data-html="true"
+                                        title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
+                                        <tbody><tr><td>SAL m</td><td></td><td>[CP] <- Valor(m)</td></tr>
+                                        </tbody></table>" value='SAL'>
+                                    SAL
+                                </button>
+                                <button type="button" class="btn btn-warning btn-sm instruccion"
                                         data-toggle="tooltip" data-placement="top" data-html="true"
                                         title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
                                         <tbody><tr><td>SXI m</td><td></td><td>Si [R0]=0 [CP] <- Valor(m) Sino [CP] <- [CP]+1</td></tr>
                                         </tbody></table>" value='SXI'>
                                     SXI
                                 </button>
-                                <button type="button" class="btn btn-success btn-sm instruccion"
+                                <button type="button" class="btn btn-warning btn-sm instruccion"
                                         data-toggle="tooltip" data-placement="top" data-html="true"
                                         title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
                                         <tbody><tr><td>SXM m</td><td></td><td>Si [R0]&gt;0 [CP] <- Valor(m) Sino [CP] <- [CP]+1</td></tr>
                                         </tbody></table>" value='SXM'>
                                     SXM
+                                </button>
+                                <button type="button" class="btn btn-primary btn-sm instruccion"
+                                        data-toggle="tooltip" data-placement="top" data-html="true"
+                                        title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
+                                        <tbody><tr><td>IMP n</td><td>CeldaDeSalida[CE] <- Valor(n)</td><td>[CP] <- [CP] + 1</td></tr>
+                                        <tr><td>IMP R(i)</td><td>CeldaDeSalida[CE] <- [Ri]</td><td>[CP] <- [CP] + 1</td></tr>
+                                        <tr><td>IMP R(R(i))</td><td>CeldaDeSalida[CE] <-[R[Ri]]</td><td>[CP] <- [CP] + 1</td></tr>
+                                        </tbody></table>" value='IMP'>
+                                    IMP
+                                </button>
+                                <button type="button" class="btn btn-primary btn-sm instruccion"
+                                        data-toggle="tooltip" data-placement="top" data-html="true"
+                                        title="<table class='table'><thead><tr><th>Instrucción</th><th>Efecto sobre registros y cintas</th><th>Efecto en CP</th></tr></thead>
+                                        <tbody><tr><td>LEE R(i)</td><td>[Ri] <- CeldaDeEntrada(CL)</td><td>[CP] <- [CP] + 1</td></tr>
+                                        <tr><td>LEE R(R(i))</td><td>[R[Ri]] <- CeldaDeEntrada(CL)</td><td>[CP] <- [CP] + 1</td></tr>
+                                        </tbody></table>" value='LEE'>
+                                    LEE
                                 </button>
                             </div>
                         </div>
@@ -135,11 +135,11 @@
                     <h4>Registros</h4>
                     <form id="registros">
                         <div class="form-group">
-                            <label for="contadorPrograma">Contador de programa</label>
+                            <label for="contadorPrograma">Contador de programa (CP)</label>
                             <input type="text" class="form-control" id="contadorPrograma" disabled="disabled">
                         </div>
                         <div class="form-group">
-                            <label for="acumulador">Acumulador</label>
+                            <label for="acumulador">Acumulador (R0)</label>
                             <input type="text" class="form-control" id="acumulador" disabled="disabled">
                         </div>
                         <div id="otrosRegistros"></div>
