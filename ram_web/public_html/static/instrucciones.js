@@ -292,20 +292,6 @@ function InstruccionSAL(m) {
     };
     return object;
 }
-InstruccionSI.prototype = new Instruccion();
-function InstruccionSI(m) {
-    Instruccion.call(this);
-    var object = this;
-    this.m = m;
-
-    this.ejecutar = function (entrada, salida, cl, ce, cp, acum, registros) {
-    };
-
-    this.mostrar = function () {
-        return "";
-    };
-    return object;
-}
 
 InstruccionSUM.prototype = new Instruccion();
 function InstruccionSUM(n, direccionamiento) {

@@ -309,9 +309,10 @@ $(document).ready(function () {
     });
 
     $(".instruccion").click(function () {
-        var instruccion = $(this).text();
+        var instruccion = $(this).val();
         $("#programa").val($("#programa").val() + instruccion + " ");
         $("#programa").focus();
     });
 
+    $('[data-toggle="tooltip"]').tooltip();
 });

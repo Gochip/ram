@@ -12,3 +12,6 @@ body{
     padding-bottom: 3px;
     padding-top: 5px;
 }
+.tooltip-inner {
+    min-width: 500px;
+}
