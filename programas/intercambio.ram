@@ -6,4 +6,6 @@ CAR R(1)
 ALM R(2)
 CAR R(3)
 ALM R(1)
+IMP R(1)
+IMP R(2)
 FIN

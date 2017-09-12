@@ -7,10 +7,16 @@ body{
 }
 .instrucciones{
     background-color: #dddddd;
+    padding-bottom: 3px;
+    padding-top: 5px;
+}
+.codigos{
+    background-color: #dddddd;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     padding-bottom: 3px;
     padding-top: 5px;
+    border-top: 1px solid gray;
 }
 .tooltip-inner {
     min-width: 500px;

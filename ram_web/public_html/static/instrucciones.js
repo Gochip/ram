@@ -173,7 +173,7 @@ function InstruccionLEE(n, direccionamiento) {
     this.ejecutar = function (entrada, salida, cl, ce, cp, acum, registros) {
         var c = null;
         if (cl.getValor() >= entrada.length) {
-            throw new Error("ERROR, se acabó la entrada");
+            c = 0;
         } else {
             c = entrada.charAt(cl.getValor());
         }
@@ -181,6 +181,7 @@ function InstruccionLEE(n, direccionamiento) {
         if(isNaN(cf)){
             cf = (c + "").charCodeAt(0);
         }
+        console.log(cf);
         switch (object.direccionamiento) {
             case INSTRUCCION_INDIRECTO:
                 var v = registros.getRegistro(object.n).getValor();

@@ -315,4 +315,105 @@ $(document).ready(function () {
     });
 
     $('[data-toggle="tooltip"]').tooltip();
+
+    $("#slcCodigos").change(function () {
+        var seleccionado = $(this).val();
+        var programa = null;
+        switch (seleccionado) {
+            case "div":
+                programa = "LEE R(1)\n" +
+                        "LEE R(2)\n" +
+                        "CAR R(1)\n" +
+                        "DIV R(2)\n" +
+                        "ALM R(3)\n" +
+                        "IMP R(3)\n" +
+                        "FIN";
+                break;
+            case "mul":
+                programa = "LEE R(1)\n" +
+                        "LEE R(2)\n" +
+                        "CAR R(1)\n" +
+                        "MUL R(2)\n" +
+                        "ALM R(3)\n" +
+                        "IMP R(3)\n" +
+                        "FIN";
+                break;
+            case "sum":
+                programa = "LEE R(1)\n" +
+                        "LEE R(2)\n" +
+                        "CAR R(1)\n" +
+                        "SUM R(2)\n" +
+                        "ALM R(3)\n" +
+                        "IMP R(3)\n" +
+                        "FIN";
+                break;
+            case "res":
+                programa = "LEE R(1)\n" +
+                        "LEE R(2)\n" +
+                        "CAR R(1)\n" +
+                        "RES R(2)\n" +
+                        "ALM R(3)\n" +
+                        "IMP R(3)\n" +
+                        "FIN";
+                break;
+            case "sumatoria":
+                programa = "LEE R(1)\n" +
+                        "CAR R(1)\n" +
+                        "SxI 8\n" +
+                        "CAR R(2)\n" +
+                        "SUM R(1)\n" +
+                        "ALM R(2)\n" +
+                        "SAL 1\n" +
+                        "IMP R(2)\n" +
+                        "FIN";
+                break;
+            case "for":
+                programa = "CAR 5\n" +
+                        "SxI 7\n" +
+                        "ALM R(1)\n" +
+                        "IMP R(1)\n" +
+                        "RES 1\n" +
+                        "SxM 3\n" +
+                        "FIN";
+                break;
+            case "intercambio":
+                programa = "LEE R(1)\n" +
+                        "LEE R(2)\n" +
+                        "CAR R(2)\n" +
+                        "ALM R(3)\n" +
+                        "CAR R(1)\n" +
+                        "ALM R(2)\n" +
+                        "CAR R(3)\n" +
+                        "ALM R(1)\n" +
+                        "IMP R(1)\n" +
+                        "IMP R(2)\n" +
+                        "FIN";
+                break;
+            case "punteros":
+                programa = "CAR 100\n" +
+                        "ALM R(1)\n" +
+                        "ALM R(2)\n" +
+                        "LEE R(R(1))\n" +
+                        "CAR R(1)\n" +
+                        "SUM 1\n" +
+                        "ALM R(1)\n" +
+                        "LEE R(R(1))\n" +
+                        "CAR R(R(1))\n" +
+                        "MUL R(R(2))\n" +
+                        "ALM R(3)\n" +
+                        "CAR R(2)\n" +
+                        "SUM 2\n" +
+                        "ALM R(1)\n" +
+                        "CAR R(3)\n" +
+                        "ALM R(R(1))\n" +
+                        "FIN";
+                break;
+        }
+
+        if (programa !== null) {
+            $("#programa").val(programa);
+        } else {
+            $("#programa").val("");
+        }
+    });
 });
