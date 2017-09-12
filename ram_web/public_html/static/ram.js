@@ -308,4 +308,10 @@ $(document).ready(function () {
         ejecutarPrograma(entrada, programa);
     });
 
+    $(".instruccion").click(function () {
+        var instruccion = $(this).text();
+        $("#programa").val($("#programa").val() + instruccion + " ");
+        $("#programa").focus();
+    });
+
 });
