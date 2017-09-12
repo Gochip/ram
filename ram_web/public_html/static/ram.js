@@ -112,7 +112,12 @@ var Registro = function (numero) {
     this.valor = 0;
     this.numero = numero;
     this.getValor = function () {
-        return parseInt(object.valor);
+        var v = parseInt(object.valor);
+        if (isNaN(v)) {
+            return (v + "").charCodeAt(0);
+        } else {
+            return v;
+        }
     };
 
     this.setValor = function (valor) {

@@ -178,6 +178,9 @@ function InstruccionLEE(n, direccionamiento) {
             c = entrada.charAt(cl.getValor());
         }
         var cf = parseInt(c + "");
+        if(isNaN(cf)){
+            cf = (c + "").charCodeAt(0);
+        }
         switch (object.direccionamiento) {
             case INSTRUCCION_INDIRECTO:
                 var v = registros.getRegistro(object.n).getValor();
