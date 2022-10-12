@@ -175,7 +175,7 @@ function InstruccionLEE(n, direccionamiento) {
         if (cl.getValor() >= entrada.length) {
             c = 0;
         } else {
-            c = entrada.charAt(cl.getValor());
+			c = entrada[cl.getValor()];
         }
         var cf = parseInt(c + "");
         if(isNaN(cf)){

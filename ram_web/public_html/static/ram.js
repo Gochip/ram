@@ -245,7 +245,17 @@ var RAM = function () {
     };
 
     this.setEntrada = function (entrada) {
-        object.entrada = entrada;
+		if (entrada.indexOf("|") >= 0) {
+			object.entrada = [];
+			var partes = entrada.split("|");
+			for (var i = 0; i < partes.length; i++) {
+				if (partes[i] !== "") {
+					object.entrada.push(partes[i]);
+				}
+			}
+		} else {
+			object.entrada = Array.from(entrada);
+		}
     };
 
     this.getSalida = function () {
