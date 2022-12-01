@@ -21,3 +21,41 @@ body{
 .tooltip-inner {
     min-width: 500px;
 }
+#programa, #contadorLineas {
+    font-family: lucida console, courier new, courier, monospace;
+    margin: 0;
+    padding: 10px 0;
+    border-radius: 0;
+    resize: none;
+    font-size: 16px;
+    line-height: 1.2;
+    outline: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#contadorLineas:focus-visible,
+#programa:focus-visible {
+    outline:none;
+}
+#contadorLineas {
+      display: flex;
+      border-color: transparent;
+      overflow-y: hidden;
+      text-align: right;
+      box-shadow: none;
+      position: absolute;
+      width: 3.5rem;
+      /* Determine appearance of line counter */
+      background-color:#f5f5f5;
+      border-color:#aaaaaa;
+      color:#928869;
+}
+#programa {
+      padding-left: calc(3.5rem + 5px);
+      width:100%;
+      /* Determine appearance of code editor */
+      background-color:white;
+      border-color:#aaaaaa;
+      color:#000000;
+}

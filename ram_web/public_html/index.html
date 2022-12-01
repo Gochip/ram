@@ -12,6 +12,40 @@
         <script src="static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="static/instrucciones.js" type="text/javascript"></script>
         <script src="static/ram.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var programa = document.getElementById('programa');
+				var contadorLineas = document.getElementById('contadorLineas');
+				programa.addEventListener('scroll', () => {
+					contadorLineas.scrollTop = programa.scrollTop;
+					contadorLineas.scrollLeft = programa.scrollLeft;
+				});
+				contadorLineas.addEventListener('keydown', (e) => {
+				   let { keyCode } = e;
+				   let { value, selectionStart, selectionEnd } = contadorLineas;
+					if (keyCode === 9) {  // TAB = 9
+					 e.preventDefault();
+					 contadorLineas.value = value.slice(0, selectionStart) + '\t' + value.slice(selectionEnd);
+					 contadorLineas.setSelectionRange(selectionStart+2, selectionStart+2)
+				   }
+				});
+				var lineCountCache = 0;
+				function line_counter() {
+					  var lineCount = programa.value.split('\n').length;
+					  var outarr = new Array();
+					  if (lineCountCache != lineCount) {
+						 for (var x = 0; x < lineCount; x++) {
+							outarr[x] = (x + 1) + '.';
+						 }
+						 contadorLineas.value = outarr.join('\n');
+					  }
+					  lineCountCache = lineCount;
+				}
+				programa.addEventListener('input', () => {
+					line_counter();
+				});
+			});
+		</script>
     </head>
     <body>
         <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
@@ -29,7 +63,10 @@
                         </div>
                         <div class="form-group">
                             <label for="programa">Código</label>
-                            <textarea class="form-control programa" id="programa" rows="10"></textarea>
+							<p>
+								<textarea id="contadorLineas" wrap='off' readonly rows="10">1.</textarea>
+								<textarea class="form-control programa" wrap="off" id="programa" rows="10"></textarea>
+							</p>
                             <div class="instrucciones">
                                 <label>Instrucciones</label>
                                 <button type="button" class="btn btn-success btn-sm instruccion"
